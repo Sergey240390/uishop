@@ -15,7 +15,8 @@
         "type": "destination",
         "name": "xs_api",
         "entryPath": "/services/shop.xsjs"
-      }
+      },
+		"description": "Shops Resources"
     },
     {
       "path": "/services/image",
@@ -23,7 +24,8 @@
         "type": "destination",
         "name": "xs_api",
         "entryPath": "/services/image.xsjs"
-      }
+      },
+		"description": "Image Resources"
     },
     {
       "path": "/test-resources",

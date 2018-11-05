@@ -10,17 +10,12 @@ sap.ui.define([
 		onInit: function () {
 			var that = this;
 			var component = that.getOwnerComponent();
-//			var navigationParameter = component.getComponentData();
-//			var shopId = navigationParameter && navigationParameter.startupParameters.shopId || 1000001; 
 			if(!component.getModel()){
 				component.setModel(models.createEmptyJSONModel());
 			}
         	this._shopLoadingTask = Utils.createPeriodicalyTask(function () {
         		$.ajax({
 		            type: "GET",
-//		            data: {
-//		            	shopId: shopId
-//		            },
 					url: "/services/shop?",
 					async: false,
 					success: function (data, textStatus, jqXHR) {
