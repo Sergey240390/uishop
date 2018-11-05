@@ -18,6 +18,14 @@
       }
     },
     {
+      "path": "/services/image",
+      "target": {
+        "type": "destination",
+        "name": "xs_api",
+        "entryPath": "/services/image.xsjs"
+      }
+    },
+    {
       "path": "/test-resources",
       "target": {
         "type": "service",

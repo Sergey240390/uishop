@@ -62,7 +62,7 @@
 								type="{= ${device>/system/phone} ? 'Active' : 'Inactive'}"
 								press="onSelectionChange"
 								title="{shopName}"
-								icon="{='/services/image?ID=' + ${shop/photo2} + '&amp;source=shop'}">
+								icon="{='/services/image?ID=' + ${ID} + '&amp;source=shop'}">
 								<attributes>
 									<ObjectAttribute title="{shopSite}"/>
 									<ObjectAttribute id="Link" text="{shopSite}" active="true" press="handleLinkObjectAttributePress"/>

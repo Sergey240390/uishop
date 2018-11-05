@@ -57,14 +57,6 @@
 				"settings": {
 					"bundleName": "com.epam.uishop.i18n.i18n"
 				}
-			},
-			"shop": {
-				"type": "sap.ui.model.json.JSONModel",
-				"uri": "Shops.json"
-			},
-			"shops": {
-				"type": "sap.ui.model.json.JSONModel",
-				"uri": "shop.xsjs"
 			}
 		},
 		"resources": {
