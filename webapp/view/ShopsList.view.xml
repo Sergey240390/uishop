@@ -4,72 +4,97 @@
 		<pages>
 			<Page title="{i18n>title}">
 				<content>
-							<!-- For client side filtering add this to the items attribute: parameters: {operationMode: 'Client'}}" -->
-							<List
-								id="list"
-								width="auto"
-								class="sapFDynamicPageAlignContent"
-								items="{shop>/Shops}"
-								busyIndicatorDelay="{masterView>/delay}"
-								noDataText="{masterView>/noDataText}"
-								mode="{= ${device>/system/phone} ? 'None' : 'SingleSelectMaster'}"
-								growing="true"
-								growingScrollToLoad="true"
-								updateFinished="onUpdateFinished"
-								selectionChange="onSelectionChange">
-								<infoToolbar>
-									<Toolbar
-										active="true"
-										id="filterBar"
-										visible="{masterView>/isFilterBarVisible}"
-										press="onOpenViewSettings">
-										<Title
-											id="filterBarLabel"
-											text="{masterView>/filterBarLabel}" />
-									</Toolbar>
-								</infoToolbar>
-								<headerToolbar>
-									<OverflowToolbar>
-										<SearchField
-											id="searchField"
-											showRefreshButton="true"
-											tooltip="{i18n>masterSearchTooltip}"
-											width="100%"
-											search="onSearch">
-											<layoutData>
-												<OverflowToolbarLayoutData
-													minWidth="150px"
-													maxWidth="240px"
-													shrinkable="true"
-													priority="NeverOverflow"/>
-											</layoutData>
-										</SearchField>
-										<ToolbarSpacer/>
-										<Button
-											id="filterButton"
-											press="onOpenViewSettings"
-											icon="sap-icon://filter"
-											type="Transparent"/>
-										<Button
-											id="groupButton"
-											press="onOpenViewSettings"
-											icon="sap-icon://group-2"
-											type="Transparent"/>
-									</OverflowToolbar>
-								</headerToolbar>
-								<items>
-									<ObjectListItem
-										type="{= ${device>/system/phone} ? 'Active' : 'Inactive'}"
-										press="onSelectionChange"
-										title="{shop>Name}"
-										icon="{shop>Logo}">
-										<attributes>
-											<ObjectAttribute title="{shop>Description}"/>
-											<ObjectAttribute id="Link" text="{shop>web}" active="true" press="handleLinkObjectAttributePress"/>
-										</attributes>
-									</ObjectListItem>
-								</items>
-							</List>
+					<!-- For client side filtering add this to the items attribute: parameters: {operationMode: 'Client'}}" -->
+					<List
+						id="list"
+						width="auto"
+						class="sapFDynamicPageAlignContent"
+						items="{shop>/Shops}"
+						busyIndicatorDelay="{masterView>/delay}"
+						noDataText="{masterView>/noDataText}"
+						mode="{= ${device>/system/phone} ? 'None' : 'SingleSelectMaster'}"
+						growing="true"
+						growingScrollToLoad="true"
+						updateFinished="onUpdateFinished"
+						selectionChange="onSelectionChange">
+						<infoToolbar>
+							<Toolbar
+								active="true"
+								id="filterBar"
+								visible="{masterView>/isFilterBarVisible}"
+								press="onOpenViewSettings">
+								<Title
+									id="filterBarLabel"
+									text="{masterView>/filterBarLabel}" />
+							</Toolbar>
+						</infoToolbar>
+						<headerToolbar>
+							<OverflowToolbar>
+								<SearchField
+									id="searchField"
+									showRefreshButton="true"
+									tooltip="{i18n>masterSearchTooltip}"
+									width="100%"
+									search="onSearch">
+									<layoutData>
+										<OverflowToolbarLayoutData
+											minWidth="150px"
+											maxWidth="240px"
+											shrinkable="true"
+											priority="NeverOverflow"/>
+									</layoutData>
+								</SearchField>
+								<ToolbarSpacer/>
+								<Button
+									id="filterButton"
+									press="onOpenViewSettings"
+									icon="sap-icon://filter"
+									type="Transparent"/>
+								<Button
+									id="groupButton"
+									press="onOpenViewSettings"
+									icon="sap-icon://group-2"
+									type="Transparent"/>
+							</OverflowToolbar>
+						</headerToolbar>
+						<items>
+							<ObjectListItem
+								type="{= ${device>/system/phone} ? 'Active' : 'Inactive'}"
+								press="onSelectionChange"
+								title="{shop>Name}"
+								icon="{shop>Logo}">
+								<attributes>
+									<ObjectAttribute title="{shop>Description}"/>
+									<ObjectAttribute id="Link" text="{shop>web}" active="true" press="handleLinkObjectAttributePress"/>
+								</attributes>
+							</ObjectListItem>
+						</items>
+					</List>
+					<List
+						id="lists"
+						width="auto"
+						class="sapFDynamicPageAlignContent"
+						items="{/}"
+						busyIndicatorDelay="{masterView>/delay}"
+						noDataText="{masterView>/noDataText}"
+						mode="{= ${device>/system/phone} ? 'None' : 'SingleSelectMaster'}"
+						growing="true"
+						growingScrollToLoad="true"
+						updateFinished="onUpdateFinished"
+						selectionChange="onSelectionChange">
+						<items>
+							<ObjectListItem
+								type="{= ${device>/system/phone} ? 'Active' : 'Inactive'}"
+								press="onSelectionChange"
+								title="{shop>Name}"
+								icon="{shop>Logo}">
+								<attributes>
+									<ObjectAttribute title="{shop>Description}"/>
+									<ObjectAttribute id="Links" text="{shop>web}" active="true" press="handleLinkObjectAttributePress"/>
+								</attributes>
+							</ObjectListItem>
+						</items>
+					</List>
 				</content>
 			</Page>
 		</pages>

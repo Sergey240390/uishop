@@ -9,8 +9,8 @@
 		},
 		"description": "SAPUI5 Resources"
     },
-    {
-      "path": "/services/shop.xsjs",
+   {
+      "path": "/services/shop",
       "target": {
         "type": "destination",
         "name": "xs_api",

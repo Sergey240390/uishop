@@ -5,12 +5,16 @@ sap.ui.define([
 	"use strict";
 
 	return {
+		
+		createEmptyJSONModel: function () {
+			var oModel = new JSONModel();
+			return oModel;
+		},
 
 		createDeviceModel: function () {
 			var oModel = new JSONModel(Device);
 			oModel.setDefaultBindingMode("OneWay");
 			return oModel;
 		}
-
 	};
 });
