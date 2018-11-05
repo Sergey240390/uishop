@@ -27,12 +27,6 @@
 				}).placeAt("content");
 			});
 		</script>
-		<script>
-		sap.ui.getCore().attachInit(function () {
-			var sModel = new sap.ui.model.json.JSONModel();
-		    sModel.loadData("/services/shop.xsjs");    
-			sap.ui.getCore().setModel(sModel, "shopss");
-		</script>
 	</head>
 
 	<body class="sapUiBody" id="content">

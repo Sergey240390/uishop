@@ -3,26 +3,31 @@ sap.ui.define([
 	"com/epam/uishop/util/utils",
 	"com/epam/uishop/model/models",
 	"sap/ui/model/json/JSONModel"
-], function (Controller, JSONModel, Utils, models) {
+], function (Controller, Utils, models, JSONModel) {
 	"use strict";
 	
 	return Controller.extend("sap.m.sample.ObjectHeader.ShopsList", {
 		onInit: function () {
 			var that = this;
 			var component = that.getOwnerComponent();
+//			var navigationParameter = component.getComponentData();
+//			var shopId = navigationParameter && navigationParameter.startupParameters.shopId || 1000001; 
 			if(!component.getModel()){
 				component.setModel(models.createEmptyJSONModel());
 			}
         	this._shopLoadingTask = Utils.createPeriodicalyTask(function () {
         		$.ajax({
 		            type: "GET",
-					url: "/services/shop.xsjs",
-					async: true,
+//		            data: {
+//		            	shopId: shopId
+//		            },
+					url: "/services/shop?",
+					async: false,
 					success: function (data, textStatus, jqXHR) {
 		                component.getModel().setData(data);
 		            },
 		            error: function (data, textStatus, jqXHR) {
-					console.log("Error to post ", textStatus, data, jqXHR);
+						console.log("Error to post ", textStatus, data, jqXHR);
 					}
         		});
 			}, 25000);
@@ -30,9 +35,9 @@ sap.ui.define([
 		},
 
 		handleLinkObjectAttributePress : function (oEvent) {
-			var oSelectedItem = oEvent.getParameter("shop");
-            var s1pt = oSelectedItem.getBindingContext().getProperty("Web");
-        			 sap.m.URLHelper.redirect(s1pt, true);
+//			var oSelectedItem = oEvent.getParameter("shop");
+//            var s1pt = oSelectedItem.getBindingContext().getProperty("Web");
+        			 sap.m.URLHelper.redirect("https:/evroopt.by", true);
 		}
 	});
 

@@ -14,7 +14,6 @@
 			"version": "1.40.12"
 		}
 	},
-
 	"sap.ui": {
 		"technology": "UI5",
 		"icons": {
@@ -33,10 +32,8 @@
 		"supportedThemes": [
 			"sap_hcb",
 			"sap_belize"
-
 		]
 	},
-
 	"sap.ui5": {
 		"rootView": {
 			"viewName": "com.epam.uishop.view.ShopsList",
@@ -59,21 +56,23 @@
 				"type": "sap.ui.model.resource.ResourceModel",
 				"settings": {
 					"bundleName": "com.epam.uishop.i18n.i18n"
-					}
-				},
-				"shop": {
-					"type": "sap.ui.model.json.JSONModel",
-					"uri": "Shops.json"
-				},
-				"shops": {
-					"type": "sap.ui.model.json.JSONModel",
-					"uri": "shop.xsjs"
 				}
+			},
+			"shop": {
+				"type": "sap.ui.model.json.JSONModel",
+				"uri": "Shops.json"
+			},
+			"shops": {
+				"type": "sap.ui.model.json.JSONModel",
+				"uri": "shop.xsjs"
+			}
 		},
 		"resources": {
-			"css": [{
-				"uri": "css/style.css"
-			}]
+			"css": [
+				{
+					"uri": "css/style.css"
+				}
+			]
 		},
 		"routing": {
 			"config": {
@@ -85,11 +84,15 @@
 				"controlId": "idAppControl",
 				"clearControlAggregation": false
 			},
-			"routes": [{
-				"name": "RouteShopsList",
-				"pattern": "RouteShopsList",
-				"target": ["TargetShopsList"]
-			}],
+			"routes": [
+				{
+					"name": "RouteShopsList",
+					"pattern": "RouteShopsList",
+					"target": [
+						"TargetShopsList"
+					]
+				}
+			],
 			"targets": {
 				"TargetShopsList": {
 					"viewType": "XML",
@@ -99,5 +102,9 @@
 				}
 			}
 		}
+	},
+	"sap.platform.hcp": {
+		"uri": "webapp",
+		"_version": "1.1.0"
 	}
 }
