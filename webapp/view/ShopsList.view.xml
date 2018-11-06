@@ -4,7 +4,6 @@
 		<pages>
 			<Page title="{i18n>title}">
 				<content>
-					<!-- For client side filtering add this to the items attribute: parameters: {operationMode: 'Client'}}" -->
 					<List
 						id="list"
 						width="auto"
@@ -17,25 +16,15 @@
 						growingScrollToLoad="true"
 						updateFinished="onUpdateFinished"
 						selectionChange="onSelectionChange">
-						<infoToolbar>
-							<Toolbar
-								active="true"
-								id="filterBar"
-								visible="{masterView>/isFilterBarVisible}"
-								press="onOpenViewSettings">
-								<Title
-									id="filterBarLabel"
-									text="{masterView>/filterBarLabel}" />
-							</Toolbar>
-						</infoToolbar>
 						<headerToolbar>
 							<OverflowToolbar>
+								<ToolbarSpacer/>
 								<SearchField
 									id="searchField"
 									showRefreshButton="true"
 									tooltip="{i18n>masterSearchTooltip}"
 									width="100%"
-									search="onSearch">
+									liveChange="onSearch">
 									<layoutData>
 										<OverflowToolbarLayoutData
 											minWidth="150px"
@@ -44,22 +33,11 @@
 											priority="NeverOverflow"/>
 									</layoutData>
 								</SearchField>
-								<ToolbarSpacer/>
-								<Button
-									id="filterButton"
-									press="onOpenViewSettings"
-									icon="sap-icon://filter"
-									type="Transparent"/>
-								<Button
-									id="groupButton"
-									press="onOpenViewSettings"
-									icon="sap-icon://group-2"
-									type="Transparent"/>
 							</OverflowToolbar>
 						</headerToolbar>
-						<items>
+						<items type="Navigation">
 							<ObjectListItem
-								type="{= ${device>/system/phone} ? 'Active' : 'Inactive'}"
+								type="Navigation"
 								press="onSelectionChange"
 								title="{shopName}"
 								icon="{='/services/image?ID=' + ${ID} + '&amp;source=shop'}">
