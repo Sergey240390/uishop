@@ -22,13 +22,13 @@
 								<SearchField
 									id="searchField"
 									showRefreshButton="true"
-									tooltip="{i18n>masterSearchTooltip}"
+									tooltip="{i18n>searchTooltip}"
 									width="100%"
 									liveChange="onSearch">
 									<layoutData>
 										<OverflowToolbarLayoutData
 											minWidth="150px"
-											maxWidth="240px"
+											maxWidth="300px"
 											shrinkable="true"
 											priority="NeverOverflow"/>
 									</layoutData>
@@ -40,10 +40,21 @@
 								type="Navigation"
 								press="onSelectionChange"
 								title="{shopName}"
-								icon="{='/services/image?ID=' + ${ID} + '&amp;source=shop'}">
+								icon="{='/services/image?ID=' + ${ID} + '&amp;source=shop'}"
+								iconDensityAware="false">
 								<attributes>
-									<ObjectAttribute title="{shopSite}"/>
-									<ObjectAttribute id="Link" text="{shopSite}" active="true" press="handleLinkObjectAttributePress"/>
+									<ObjectAttribute
+										title="{i18n>adress}" 
+										text="{shopAddress}"/>
+									<ObjectAttribute
+										title="{i18n>phone}" 
+										text="{phoneNumber}"/>
+									<ObjectAttribute 
+										id="Link" 
+										title="{i18n>web}" 
+										text="{shopSite}" 
+										active="true" 
+										press="handleLinkObjectAttributePress"/>
 								</attributes>
 							</ObjectListItem>
 						</items>
